@@ -1,17 +1,28 @@
 # Drug Applications Server
 
 ### How to run application locally in Docker
+Application required installed JDK 17.
 
-Just call following command in your terminal:
+To run/stop application just call following commands in your terminal:
+
+#### Mac/Linux:
 
 ``
 ./env_up.sh
 ``
 
-To stop application call:
-
 ``
 ./env_down.sh
+``
+
+#### Windows:
+
+``
+.\env_up.bat
+``
+
+``
+.\env_down.bat
 ``
 
 ***
@@ -21,4 +32,4 @@ to get information about drug applications for given manufacturer name/brand nam
 
 Test user credentials:
 #### username: testUser
-#### password: m6S5vSE7uF# drug-applications-server
+#### password: m6S5vSE7uF

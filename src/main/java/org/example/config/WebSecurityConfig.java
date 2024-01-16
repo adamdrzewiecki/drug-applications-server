@@ -14,9 +14,11 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry.anyRequest()
-                .permitAll()
-            )
+        return http.authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html",
+                    "/webjars/swagger-ui/**", "/swagger-resources/**", "/actuator/**").permitAll()
+                .requestMatchers("/drugs-applications", "/openfda").authenticated()
+                .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults())
             .csrf(AbstractHttpConfigurer::disable)
             .build();
