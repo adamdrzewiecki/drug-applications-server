@@ -1,10 +1,18 @@
 # Drug Applications Server
 
-### How to run
-To run this application you need to have Docker installed on your machine
+### How to run application locally in Docker
 
+Just call following command in your terminal:
 
+``
+./env_up.sh
+``
 
+To stop application call:
+
+``
+./env_down.sh
+``
 
 ***
 After starting application use
