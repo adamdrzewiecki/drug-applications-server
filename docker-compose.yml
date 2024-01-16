@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: openfda
+
+  drug-applications-server:
+    image: docker.example.org/drug-applications-server:latest
+    container_name: drug-applications-server
+    ports:
+      - "8080:8080"
+      - "9080:9080" #debug port
+    environment:
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,address=*:9080,server=y,suspend=n
